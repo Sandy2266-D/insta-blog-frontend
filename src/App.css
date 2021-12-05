@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+a{
+  color: black !important;
+}
+
+.brand-logo,h2{
+  font-family: 'Grand Hotel', cursive;
+}
+
+.mycard1{
+  height: calc(130vh - 50px);
+  background-image: url("https://www.wallpapertip.com/wmimgs/199-1999229_instagram-logo-de-instagram.jpg");
+  background-size: cover;
+  }
+
+  .mycard{
+    height: calc(150vh - 60px);
+    background-image: url("https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5zdGFncmFtJTIwYXBwfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+    background-size: cover;
+    }
+
+    
+  .auth-cardDetails{
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    margin: 10px auto;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-beautiful-technology-website-business-poster-background-template-image_148436.jpg");
+  }
+.auth-card{
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 10px auto;
+  background-image: url("https://www.wallpapertip.com/wmimgs/167-1677724_technology-website-background-images-hd.jpg");
+}
+
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(8, 93, 252) !important;
+  box-shadow: 0 1px 0 0 rgb(8, 93, 252)  !important;
+}
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid rgb(8, 93, 252) !important;
+  box-shadow: 0 1px 0 0 rgb(8, 93, 252)  !important;
+}
+
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item{
+  width: 30%;
+}
+
+.home-card{
+  max-width: 600px;
+  height: max-content;
+  margin: 26px auto;
+  
+}
+.collection-item{
+  width: 100%;
+}
+
+/* .navbar{
+  align-items: center;
+  justify-content: space-evenly;
+} */
+#toast-container{
+  top:30px !important;
+  right: 20px !important;
+  left: auto !important;
+}
+
+/* .nav{
+  align-items: flex-end;
+} */
+
+.material-icons:hover{
+  cursor: pointer;
+}
+
+
+/* .toggle__menu{
+  justify-content: flex-end;
+  
+} */
+
+
+
+@media screen and (min-width: 1600px){
+.followers{
+  display: flex;
+ justify-content: space-between; 
+ width: 10px}
+
+ .profile{
+  padding: 0px
+ }
+
+/* div,img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+} */
+
+}
+
+@media (max-width: 300px){
+  .nav-wrapper{
+    width: 0px;
+    padding: 0px;
+    height: 0px;
+  }
+}
