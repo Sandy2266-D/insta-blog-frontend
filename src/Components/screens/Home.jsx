@@ -1,11 +1,18 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {UserContext} from "../../App"
 import { Link } from 'react-router-dom'
+import {CgProfile} from "react-icons/cg"
+import SendIcon from "@material-ui/icons/Send"
+import {TextField, Button } from '@material-ui/core';
 
 const Home = () => {
     const[data,setData]=useState([])
     const{state,dispatch}= useContext(UserContext)
+    const[comments,setComments]=useState("")
     
+    // const handleUserInput = (e) => {
+    //     setData(e.target.value);
+    //   };
     useEffect(()=>{
         fetch("/allpost",{
             headers:{
@@ -83,12 +90,14 @@ const Home = () => {
             })
         }).then(res=>res.json())
         .then(result=>{
-            console.log(result)
+            //console.log(result)
             const newData = data.map(item=>{
                 if(item._id==result._id){
                     return result
+                    
                 }else{
                     return item
+                    
                 }
             })
             setData(newData)
@@ -121,7 +130,7 @@ const Home = () => {
                 data.map(item=>{
                    return( 
                     <div className="card home-card" key={item._id}>
-                    <h6> 
+                    <h5>&nbsp;<CgProfile />&nbsp;
                     <Link to={item.postedBy._id !== state._id ?"/profile/"+item.postedBy._id : "/profile" }>
                         {item.postedBy.name} </Link>
                     {item.postedBy._id === state._id 
@@ -131,7 +140,7 @@ const Home = () => {
                     >delete</i>
                     }
                     
-                    </h6>
+                    </h5>
                     
                     
                     <div className="card-image">
@@ -167,12 +176,19 @@ const Home = () => {
                                 )
                             })
                         }
-                        <form onSubmit={(e)=>{
-                            e.preventDefault()
-                            addComment(e.target[0].value,item._id)
-                        }}>
+                        <form 
+                        onSubmit={(e)=>{addComment(e.target[0].value,item._id)}}>
                         <input type="text"
-                        placeholder="add a comment" />
+                        placeholder="add a comment"
+                        onChange={(e)=>addComment(e.target.value)}
+                        />
+                        <Button
+                        size="small" variant="outlined"
+                        endIcon={<SendIcon/>}
+                        type="submit"
+                        onClick={(e)=>{addComment(e.target[0].value,item._id)}}>
+                        Comment
+                        </Button>
                         </form>
                     </div>
                     </div>
