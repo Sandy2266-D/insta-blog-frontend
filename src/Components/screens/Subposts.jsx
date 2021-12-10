@@ -1,6 +1,8 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {UserContext} from "../../App"
 import { Link } from 'react-router-dom'
+import SendIcon from "@material-ui/icons/Send"
+import {TextField, Button } from '@material-ui/core';
 
 const Home = () => {
     const{state,dispatch}= useContext(UserContext)
@@ -164,12 +166,19 @@ const Home = () => {
                                 )
                             })
                         }
-                        <form onSubmit={(e)=>{
-                            e.preventDefault()
-                            addComment(e.target[0].value,item._id)
-                        }}>
+                        <form 
+                        onSubmit={(e)=>{addComment(e.target[0].value,item._id)}}>
                         <input type="text"
-                        placeholder="add a comment" />
+                        placeholder="add a comment"
+                        onChange={(e)=>addComment(e.target.value)}
+                        />
+                        <Button
+                        size="small" variant="outlined"
+                        endIcon={<SendIcon/>}
+                        type="submit"
+                        onClick={(e)=>{addComment(e.target[0].value,item._id)}}>
+                        Comment
+                        </Button>
                         </form>
                     </div>
                     </div>
